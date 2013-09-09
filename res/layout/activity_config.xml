@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".WidgetConfig" >
+
+    <TextView
+        android:id="@+id/filepath_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/filepath"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <EditText
+        android:id="@+id/FilePath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/filepath_text"
+        android:layout_toLeftOf="@+id/browse_button"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/browse_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/FilePath"
+        android:layout_alignParentRight="true"
+        android:minHeight="24dp"
+        android:minWidth="32dp"
+        android:onClick="browse"
+        android:text="@string/browse_button" />
+
+    <Button
+        android:id="@+id/Add"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/FilePath"
+        android:layout_marginLeft="20dp"
+        android:minHeight="32dp"
+        android:minWidth="96dp"
+        android:onClick="addRow"
+        android:text="@string/add_button" />
+
+    <Button
+        android:id="@+id/Remove"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Add"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:minHeight="32dp"
+        android:minWidth="48dp"
+        android:onClick="removeRow"
+        android:text="@string/remove_button" />
+
+    <View
+        android:id="@+id/strut"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/DisplayValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/strut"
+        android:layout_below="@+id/Add"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/DisplayValue_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/DisplayValues"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/DisplayValue1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ConfigValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/strut"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Remove"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/ConfigValue_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/ConfigValues"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/ConfigValue1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ok_button"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:minHeight="32dp"
+        android:onClick="configure"
+        android:text="@string/ok_button" />
+
+</RelativeLayout>
